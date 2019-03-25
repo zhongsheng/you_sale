@@ -1,17 +1,15 @@
-FROM ruby:2.6
-
-RUN bundle config --global frozen 1
-
+FROM ruby:2.6.0
 
 ENV RAILS_ENV "production"
 
 
 WORKDIR /usr/src/app
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile ./
 RUN bundle install
 
 COPY . .
 
 
-RUN bundle exec rails assets:precompile RAILS_ENV=production
+# RUN bundle update --bundler
+# RUN bundle exec rails assets:precompile RAILS_ENV=production
 # RUN bash ./bin/start
