@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contries.each do |contry| %>
+      <tr>
+        <td><%= contry.name %></td>
+        <td><%= link_to 'Show', contry %></td>
+        <td><%= link_to 'Edit', edit_contry_path(contry) %></td>
+        <td><%= link_to 'Destroy', contry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contry', new_contry_path %>

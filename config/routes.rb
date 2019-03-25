@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :categories
+  resources :contries
+  get 'utility/upload_token'
+  root to: "home#index"
+  devise_for :users
+  resources :products
 end
