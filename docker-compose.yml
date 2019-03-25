@@ -13,6 +13,7 @@ services:
     build: .
     volumes:
       - ./public:/usr/src/app/public
+      - ./node_modules:/usr/src/app/node_modules
       - ./log:/usr/src/app/log
     ports:
       - 8801:3000
