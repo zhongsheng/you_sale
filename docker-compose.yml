@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: you_sale
+      POSTGRES_PASSWORD: 123123
+
+  app:
+    build: .
+    volumes:
+      - ./public:/usr/src/app/public
+      - ./log:/usr/src/app/log
+    ports:
+      - 8801:3000
+    restart: always
+    command: /usr/src/app/bin/start
+    links:
+      - db
