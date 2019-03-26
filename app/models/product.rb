@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :contry
   before_save do |product|
-    if product.content
+    if not product.content.blank?
       product.photo = /src="(.*)"/.match(product.content.to_s)[1]
       pp product.photo
     end
