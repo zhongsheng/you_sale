@@ -1,25 +1,20 @@
+<%= will_paginate @products %>
+<div class="card-columns text-center">
 <% @products.each do |p| %>
-    <div>
-        <%= image_tag p.photo || 'http://tmp.dzunion.cn/logo.png' %>
-        <h3>
-            <%= p.name %>
-        </h3>
-        <div>
-            <span>
-                市场零售价: <%= p.market_price %>
-            </span>
+    <div class="card shadow-sm" style="width:300px">
+        <%= image_tag p.photo || 'http://tmp.dzunion.cn/logo.png', class: 'card-img-top', style: 'height:300px; width:300px;' %>
+        <div class="card-header">
+            <h5 class="my-0 font-weight-normal"> <%= p.name %> </h5>
         </div>
-        <div>
-            <span>
-                规格: <%= p.weight %>
-            </span>
-            <span>
-                箱规: <%= p.specification %>
-            </span>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li> 市场零售价: <%= p.market_price %> </li>
+                <li>规格: <%= p.weight %></li>
+                <li> 箱规: <%= p.specification %> </li>
+            </ul>
         </div>
-
         <% if current_user.present? %>
-            <div>
+            <div class="card-footer">
                 <span><%= link_to 'Show', p %></span>
                 <span><%= link_to 'Edit', edit_product_path(p) %></span>
                 <span><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></span>
@@ -27,5 +22,6 @@
             </div>
         <% end %>
     </div>
-    <% end %>
+<% end %>
+</div>
 <%= will_paginate @products %>

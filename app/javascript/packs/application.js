@@ -10,4 +10,8 @@ require("turbolinks").start()
 
 require("trix")
 // require("@rails/actiontext")
+
+import 'bootstrap'
+import './src/application.scss'
+
 import "./trix_upload_qiniu.js"

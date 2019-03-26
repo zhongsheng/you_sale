@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  default_scope { order(:id) }
   has_rich_text :content
   belongs_to :category
   belongs_to :contry

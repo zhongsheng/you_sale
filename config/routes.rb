@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :contries
   get 'utility/upload_token'
   root to: "home#index"
-  devise_for :users
+  devise_for :users,  controllers: { registrations: "registrations"}
   resources :products
 end
