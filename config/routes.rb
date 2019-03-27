@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :suppliers
   resources :categories
   resources :contries
   get 'utility/upload_token'

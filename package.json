@@ -12,7 +12,8 @@
     "popper.js": "^1.14.7",
     "qiniu-js": "^2.5.4",
     "trix": "^1.0.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.29.6"
   },
   "version": "0.1.0",
   "devDependencies": {

@@ -18,8 +18,8 @@ WORKDIR /usr/src/app
 
 ENV RAILS_ENV "production"
 
-RUN gem install bundler:2.0.1
-RUN yarn --upgrade
+# RUN gem install bundler:2.0.1
+# RUN yarn --upgrade
 
 COPY Gemfile ./
 RUN bundle install
