@@ -9,8 +9,8 @@ development:
   encoding: unicode
   database: you_sale_dev
   pool: 5
-  username: you_sale
-  password: 123123
+  username: postgres
+  password: 123456
 
 test:
   <<: *default

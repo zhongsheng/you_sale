@@ -11,6 +11,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
     "qiniu-js": "^2.5.4",
+    "stimulus": "^1.1.1",
     "trix": "^1.0.0",
     "turbolinks": "^5.2.0",
     "webpack": "^4.29.6"

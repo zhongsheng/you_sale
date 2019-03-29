@@ -35,20 +35,33 @@ namespace :db_import do
 
     pp contries_hash
 
+    supplier = Supplier.create({company:'dzunion', name: 'dzunion'})
+
     products.each do |row|
       row[2].gsub!("\n", ' ')
       row[2].gsub!("\s+", ' ')
-      p "Insert Product #{row[2]}"
-      Product.create({
+
+      result =  Product.create({
                        name: row[2],
-                       contry_id: contries_hash[row[1]],
+                       contry_id: contries_hash[row[1]] || 1,
                        category_id: cate_hash[row[0]],
                        weight: row[3],
                        specification: row[4],
                        wholesale_price: row[5],
                        market_price: row[6],
-                       shelf_life: row[7]
-                     })
+                       shelf_life: row[7],
+                       supplier_id: supplier.id
+                        })
+      if result.errors.any?
+        pp result.errors
+        Category.delete_all
+        Contry.delete_all
+        Supplier.delete_all
+        exit
+      end
+      p "Insert Product #{row[2]}"
+
+
     end
 
     p "END"

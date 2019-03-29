@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :tags
   resources :suppliers
-  resources :categories
+  resources :categories do
+    resources :tags
+  end
   resources :contries
   get 'utility/upload_token'
   root to: "home#index"

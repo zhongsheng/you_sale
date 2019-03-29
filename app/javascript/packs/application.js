@@ -11,7 +11,14 @@ require("turbolinks").start()
 require("trix")
 // require("@rails/actiontext")
 
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+
+
 import 'bootstrap'
 import './src/application.scss'
 
 import "./trix_upload_qiniu.js"
+
+import "controllers"

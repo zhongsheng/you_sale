@@ -7,8 +7,10 @@ class Product < ApplicationRecord
 
   before_save do |product|
     if not product.content.blank?
-      product.photo = /src="(.*)"/.match(product.content.to_s)[1]
-      pp product.photo
+      if /src="(.*)"/.match(product.content.to_s)
+        product.photo = $1
+        pp product.photo
+      end
     end
   end
 end
