@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<h3>
+    <%= @category.name %>
+    <%= link_to t('Edit'), edit_category_path(@category) %>
+</h3>
+<div class="container">
+    <%= render @category.tags %>
+    <%= render 'add_tag_form' %>
+</div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= will_paginate @products %>
+<div class="card-columns text-center">
+    <%= render @products  %>
+</div>
+<%= will_paginate @products %>

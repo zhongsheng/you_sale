@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_title
 
   # GET /products
   # GET /products.json
@@ -44,7 +45,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         add_tags(@product.id)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to @product, notice: I18n.t('successfully.updated') }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to products_url, notice: I18n.t('successfully.destroyed') }
       format.json { head :no_content }
     end
   end

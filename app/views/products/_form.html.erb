@@ -11,25 +11,32 @@
         </div>
     <% end %>
 
-    <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :name, class: "input-group-text"  %>
+        </div>
+        <%= form.text_field :name, class: "form-control" %>
     </div>
-    <div class="field">
-        <%= form.label :market_price %>
-        <%= form.text_field :market_price %>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :market_price, class: "input-group-text" %>
+        </div>
+        <%= form.text_field :market_price, class: "form-control" %>
     </div>
-    <div class="field">
-        <%= form.label :wholesale_price %>
-        <%= form.text_field :wholesale_price %>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :wholesale_price, class: "input-group-text" %>
+        </div>
+        <%= form.text_field :wholesale_price, class: "form-control" %>
     </div>
     <div data-controller="tags" data-tags-url="/tags.json?category_id=">
-        <div class="field">
-            <%= form.label :category %>
+        <div class="input-group mb-3">
             <%= form.select :category_id,
                 Category.all.collect{|cata| [cata.name, cata.id]},
-                {:include_blank => 'Select a Category'},
-                {'data-action' => "change->tags#category"}
+                {:include_blank => t('Select.category')},
+                {'data-action' => "change->tags#category",
+                 class: "form-control"
+                }
             %>
             <%=link_to "添加分类", new_category_path, class: "btn btn-primary" %>
         </div>
@@ -40,28 +47,25 @@
     </div>
 
 
-    <div class="field">
-        <%= form.label :contry %>
+    <div class="input-group mb-3">
         <%= form.select :contry_id,
             Contry.all.collect {|cata| [cata.name, cata.id]},
-            {include_blank: 'Select a Country'}
+            {include_blank: t('Select.contry')}, {class: "form-control"}
         %>
         <%=link_to "添加国家", new_contry_path, class: "btn btn-primary" %>
     </div>
-    <div class="field">
-        <%= form.label :supplier %>
+    <div class="input-group mb-3">
         <%= form.select :supplier_id,
             Supplier.all.collect {|cata| [cata.company, cata.id]},
-            { include_blank: 'Select a Supplier' }
+            { include_blank: t('Select.supplier')}, {class: "form-control"}
         %>
         <%=link_to "添加供应商", new_supplier_path, class: "btn btn-primary" %>
-
     </div>
-    <div class="field">
+    <div>
         <%= form.rich_text_area :content %>
     </div>
 
-    <div class="actions">
+    <div class="actions input-group mb-3">
         <%= form.submit %>
     </div>
 <% end %>

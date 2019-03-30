@@ -10,6 +10,8 @@ class ContriesController < ApplicationController
   # GET /contries/1
   # GET /contries/1.json
   def show
+    @products = Product.where({contry_id: params[:id]}).paginate(page: params[:page], per_page: 30)
+
   end
 
   # GET /contries/new

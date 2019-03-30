@@ -1,6 +1,4 @@
-
-<span id="tag_<%= tag.id %>" class="badge badge-primary">
-    <%= tag.name %>
+<span id="tag_<%= tag.id %>" >
+    <%=link_to tag.name, tag, class: "badge badge-info"%>
     <%#=link_to 'X', category_tag_path(params[:id], tag.id), method: :delete, remote: true, class: "close" %>
-
 </span>

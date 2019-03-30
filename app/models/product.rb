@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  default_scope { where(hidden: false) }
   default_scope { order(:id) }
   has_rich_text :content
   belongs_to :category
@@ -15,4 +16,10 @@ class Product < ApplicationRecord
       end
     end
   end
+
+  def destroy
+    self.update({hidden: true})
+  end
+
+
 end

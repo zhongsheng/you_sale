@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tag.name %>
-</p>
+<h2>
+    <strong>
+        <%= @tag.category.name %>
+    </strong>
+</h2>
 
-<p>
-  <strong>Category:</strong>
-  <%= @tag.category_id %>
-</p>
+<h3>
+    <%= @tag.name %>
+    <%= render @tag.category.tags %>
+</h3>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<%= will_paginate @product_tags %>
+<div class="card-columns text-center">
+    <%= render @products  %>
+</div>
+<%= will_paginate @product_tags %>

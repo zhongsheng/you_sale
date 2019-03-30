@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contry.name %>
-</p>
+<h3>
+    <%= @contry.name %>
+</h3>
 
-<%= link_to 'Edit', edit_contry_path(@contry) %> |
-<%= link_to 'Back', contries_path %>
+<%= will_paginate @products %>
+<div class="card-columns text-center">
+    <%= render @products  %>
+</div>
+<%= will_paginate @products %>

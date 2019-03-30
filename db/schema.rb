@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_131441) do
+ActiveRecord::Schema.define(version: 2019_03_30_100657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2019_03_29_131441) do
     t.string "shelf_life"
     t.string "photo"
     t.bigint "supplier_id"
+    t.boolean "hidden", default: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["contry_id"], name: "index_products_on_contry_id"
     t.index ["supplier_id"], name: "index_products_on_supplier_id"

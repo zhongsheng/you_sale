@@ -10,6 +10,8 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @product_tags = ProductTag.where({tag_id: params[:id]}).paginate(page: params[:page], per_page: 30)
+    @products = Product.find(@product_tags.map{ |p| p.product_id })
   end
 
   # GET /tags/new
@@ -35,7 +37,8 @@ class TagsController < ApplicationController
     #   end
     # end
     @tag.save
-    redirect_to edit_category_url(tag_params[:category_id])
+    redirect_to Category.find(tag_params[:category_id])
+    return
   end
 
   # PATCH/PUT /tags/1
