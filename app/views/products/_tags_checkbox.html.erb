@@ -1,0 +1,6 @@
+<% tags.each do |tag| %>
+    <label>
+        <input data-target="tags.checked" name="product_tags[]" type="checkbox" checked value=<%= tag.id %> />
+    <%= tag.name %>
+</label>
+<% end %>

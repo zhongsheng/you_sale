@@ -1,51 +1,67 @@
 <%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <% if product.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% product.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
     </div>
-  <% end %>
+    <div class="field">
+        <%= form.label :market_price %>
+        <%= form.text_field :market_price %>
+    </div>
+    <div class="field">
+        <%= form.label :wholesale_price %>
+        <%= form.text_field :wholesale_price %>
+    </div>
+    <div data-controller="tags" data-tags-url="/tags.json?category_id=">
+        <div class="field">
+            <%= form.label :category %>
+            <%= form.select :category_id,
+                Category.all.collect{|cata| [cata.name, cata.id]},
+                {:include_blank => 'Select a Category'},
+                {'data-action' => "change->tags#category"}
+            %>
+            <%=link_to "添加分类", new_category_path, class: "btn btn-primary" %>
+        </div>
 
-  <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-  </div>
-  <div class="field">
-      <%= form.label :market_price %>
-      <%= form.text_field :market_price %>
-  </div>
-  <div class="field">
-      <%= form.label :wholesale_price %>
-      <%= form.text_field :wholesale_price %>
-  </div>
-  <div class="field">
-      <%= form.label :category %>
-      <%= form.select :category_id, Category.all.collect {|cata| [cata.name, cata.id]} %>
-      <%=link_to "添加分类", new_category_path, class: "btn btn-primary" %>
-  </div>
+        <span data-target="tags.output">
+            <%= render 'tags_checkbox', tags: product.tags  %>
+        </span>
+    </div>
 
 
-  <div class="field">
-      <%= form.label :contry %>
-      <%= form.select :contry_id, Contry.all.collect {|cata| [cata.name, cata.id]} %>
-      <%=link_to "添加国家", new_contry_path, class: "btn btn-primary" %>
-  </div>
-  <div class="field">
-      <%= form.label :supplier %>
-      <%= form.select :supplier_id, Supplier.all.collect {|cata| [cata.company, cata.id]} %>
-      <%=link_to "添加供应商", new_supplier_path, class: "btn btn-primary" %>
+    <div class="field">
+        <%= form.label :contry %>
+        <%= form.select :contry_id,
+            Contry.all.collect {|cata| [cata.name, cata.id]},
+            {include_blank: 'Select a Country'}
+        %>
+        <%=link_to "添加国家", new_contry_path, class: "btn btn-primary" %>
+    </div>
+    <div class="field">
+        <%= form.label :supplier %>
+        <%= form.select :supplier_id,
+            Supplier.all.collect {|cata| [cata.company, cata.id]},
+            { include_blank: 'Select a Supplier' }
+        %>
+        <%=link_to "添加供应商", new_supplier_path, class: "btn btn-primary" %>
 
-  </div>
-  <div class="field">
-    <%= form.rich_text_area :content %>
-  </div>
+    </div>
+    <div class="field">
+        <%= form.rich_text_area :content %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+        <%= form.submit %>
+    </div>
 <% end %>

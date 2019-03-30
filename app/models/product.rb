@@ -4,6 +4,8 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :contry
   belongs_to :supplier
+  has_many   :product_tags
+  has_many   :tags, through: :product_tags
 
   before_save do |product|
     if not product.content.blank?

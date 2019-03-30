@@ -26,9 +26,9 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
+        add_tags(@product.id)
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        add_tags(@product.id)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -75,4 +76,14 @@ class ProductsController < ApplicationController
                                       :supplier_id
                                      )
     end
+
+    def add_tags(product_id)
+      unless params[:product_tags].blank?
+        ProductTag.where(product_id: product_id).delete_all
+        ProductTag.create( params[:product_tags].map { |tag|
+                             {product_id: product_id, tag_id: tag}
+                           })
+      end
+    end
+
 end
