@@ -3740,6 +3740,11 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
+like-ruby@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/like-ruby/download/like-ruby-1.0.1.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Flike-ruby%2Fdownload%2Flike-ruby-1.0.1.tgz#74921b36fbf1339d9ca711729f0d1f0eb6523d53"
+  integrity sha1-dJIbNvvxM52cpxFynw0fDrZSPVM=
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"

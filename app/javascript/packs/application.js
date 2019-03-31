@@ -14,11 +14,12 @@ require("trix")
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-
+require("like-ruby")
 
 import 'bootstrap'
 import './src/application.scss'
 
 import "./trix_upload_qiniu.js"
 
+// Load stimulus
 import "controllers"
