@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Contries</h1>
-
 <table>
   <thead>
     <tr>
@@ -11,7 +9,7 @@
   <tbody>
     <% @contries.each do |contry| %>
       <tr>
-        <td><%= link_to contry.name, contry %></td>
+          <td><%= link_to contry.name, contry %></td>
       </tr>
     <% end %>
   </tbody>
@@ -19,4 +17,4 @@
 
 <br>
 
-<%= link_to 'New Contry', new_contry_path %>
+<%= link_to t('add'), new_contry_path, class: 'btn-primary btn' %>

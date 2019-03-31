@@ -1,0 +1,55 @@
+---
+zh-CN:
+  home:
+    index:
+      title: "产品列表"
+  products:
+    index:
+      title: "产品列表"
+    edit:
+      title: "编辑产品"
+    show:
+      title: "查看产品"
+    new:
+      title: "添加产品"
+    form:
+      submit: "保存"
+
+  categories:
+    index:
+      title: "分类列表"
+    show:
+      title: "分类"
+    edit:
+      title: "编辑分类"
+    new:
+      title: "添加分类"
+    form:
+      submit: "保存"
+
+  suppliers:
+    index:
+      title: "供应商"
+    show:
+      title: "供应商"
+    edit:
+      title: "编辑供应商信息"
+    new:
+      title: "新增供应商"
+
+  contries:
+    index:
+      title: "国家"
+    show:
+      title: "国家"
+    edit:
+      title: "编辑国家"
+    new:
+      title: "新增国家"
+  users:
+    new:
+      submit: "登入"
+      title: "用户登入"
+      email: "邮箱"
+      password: "密码"
+      name: "名字"

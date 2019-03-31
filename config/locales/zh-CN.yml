@@ -1,6 +1,6 @@
 ---
 zh-CN:
-  site_title: "丹麦商品中心"
+  site_title: "上海优涛商贸"
   delete: "删除"
   ask_confirm: "确定继续？"
   please_login: "请登入"
@@ -9,6 +9,7 @@ zh-CN:
   add: "新增"
   Show: "查看"
   Edit: "编辑"
+  Back: "返回"
   Destroy: "删除"
   Select:
     supplier: "选择供应商"
@@ -29,6 +30,8 @@ zh-CN:
       product: "产品"
       category: "分类"
       tag: "标签"
+      supplier: "供应商"
+      contry: "国家"
     attributes:
       user:
         name: "名字"
@@ -44,6 +47,11 @@ zh-CN:
         supplier: "供应商"
       category:
         name: "分类名称"
+      supplier:
+        company: "公司名称"
+        name: "联系人"
+        phone: "电话"
+        address: "地址"
       tag:
         name: "标签名称"
 
@@ -54,45 +62,6 @@ zh-CN:
           has_one: 由于 %{record} 需要此记录，所以无法移除记录
           has_many: 由于 %{record} 需要此记录，所以无法移除记录
 
-  products:
-    index:
-      title: "产品列表"
-    edit:
-      title: "编辑产品"
-    show:
-      title: "查看产品"
-    new:
-      title: "添加产品"
-    form:
-      submit: "保存"
-
-  categories:
-    index:
-      title: "分类列表"
-    show:
-      title: "分类"
-    edit:
-      title: "编辑分类"
-    new:
-      title: "添加分类"
-    form:
-      submit: "保存"
-
-
-  users:
-    index:
-      title: "管理用户"
-    form:
-      submit: "保存"
-    edit:
-      title: "更新用户信息"
-  sessions:
-    new:
-      submit: "登入"
-      title: "用户登入"
-      email: "邮箱"
-      password: "密码"
-      name: "名字"
   date:
     abbr_day_names:
     - 周日

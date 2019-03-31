@@ -1,26 +1,27 @@
-    <div class="card shadow-sm" style="width:300px">
-        <%= image_tag product.photo || 'http://tmp.dzunion.cn/logo.png', class: 'card-img-top', style: 'height:300px; width:300px;' %>
-        <div class="card-header">
-            <h5 class="my-0 font-weight-normal"> <%= product.name %> </h5>
-        </div>
-        <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-                <li> 市场零售价: <%= product.market_price %> </li>
-                <li>规格: <%= product.weight %></li>
-                <li> 箱规: <%= product.specification %> </li>
-            </ul>
-        </div>
-        <% if current_user.present? %>
-            <div class="card-footer">
-                <span><%= link_to t('Show'), product %></span>
-                <span><%= link_to t('Edit'), edit_product_path(product), target: '_blank' %></span>
-                <span>
-                    <%= link_to t('Destroy'), product,
-                    method: :delete,
-                    remote: true,
-                    data: { confirm: 'Are you sure?' }
-                    %>
-                </span>
-            </div>
-        <% end %>
+<div class="card shadow-sm" style="width:300px">
+    <%= image_tag product.photo || 'http://tmp.dzunion.cn/logo.png', class: 'card-img-top', style: 'height:300px; width:300px;' %>
+    <div class="card-header">
+        <h5 class="my-0 font-weight-normal">
+            <%= link_to product.name, product %>
+        </h5>
     </div>
+    <div class="card-body">
+        <ul class="list-unstyled mt-3 mb-4">
+            <li> 市场零售价: <%= product.market_price %> </li>
+            <li>规格: <%= product.weight %></li>
+            <li> 箱规: <%= product.specification %> </li>
+        </ul>
+    </div>
+    <% if current_user.present? %>
+        <div class="card-footer">
+            <span><%= link_to t('Edit'), edit_product_path(product), target: '_blank' %></span>
+            <span>
+                <%= link_to t('Destroy'), product,
+                method: :delete,
+                remote: true,
+                data: { confirm: 'Are you sure?' }
+                %>
+            </span>
+        </div>
+    <% end %>
+</div>

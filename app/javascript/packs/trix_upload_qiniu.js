@@ -1,6 +1,10 @@
 import $ from "jquery"
 import * as qiniu from 'qiniu-js'
 
+Number.prototype.to_s = function(){
+    return this.toString()
+}
+
 $(function () {
 
     var HOST = "http://tmp.dzunion.cn/";

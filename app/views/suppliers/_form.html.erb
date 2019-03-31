@@ -11,27 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company %>
+
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <%= form.label :company, class: "input-group-text" %>
+      </div>
+      <%= form.text_field :company, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <%= form.label :name, class: "input-group-text" %>
+      </div>
+      <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+          <%= form.label :address, class: "input-group-text" %>
+      </div>
+      <%= form.text_field :address, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+
+          <%= form.label :phone, class: "input-group-text" %>
+      </div>
+      <%= form.number_field :phone, class: "form-control" %>
   </div>
 
-  <div class="actions">
+  <div class="input-group mb-3">
     <%= form.submit %>
   </div>
 <% end %>
