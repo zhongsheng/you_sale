@@ -26,6 +26,11 @@ zh-CN:
       title: "添加分类"
     form:
       submit: "保存"
+  tags:
+    index:
+      title: "标签"
+    show:
+      title: "标签"
 
   suppliers:
     index:
