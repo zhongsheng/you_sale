@@ -32,6 +32,7 @@ zh-CN:
       tag: "标签"
       supplier: "供应商"
       contry: "国家"
+      import: "导入"
     attributes:
       user:
         name: "名字"
@@ -54,6 +55,9 @@ zh-CN:
         address: "地址"
       tag:
         name: "标签名称"
+      import:
+        name: "导入文件"
+        info: '导入数量'
 
     errors:
       messages:

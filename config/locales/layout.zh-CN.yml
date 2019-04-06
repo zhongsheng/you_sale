@@ -31,6 +31,13 @@ zh-CN:
       title: "标签"
     show:
       title: "标签"
+  imports:
+    index:
+      title: "导入记录"
+    new:
+      title: "导入文件"
+    show:
+      title: "导入记录"
 
   suppliers:
     index:

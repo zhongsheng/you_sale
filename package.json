@@ -9,7 +9,7 @@
     "@rails/webpacker": "^4.0.2",
     "bootstrap": "4.3.1",
     "jquery": "^3.3.1",
-    "like-ruby": "^1.0.1",
+    "like-ruby": "^1.1.0",
     "popper.js": "^1.14.7",
     "qiniu-js": "^2.5.4",
     "stimulus": "^1.1.1",

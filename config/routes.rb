@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :imports
   resources :tags
   resources :suppliers
   resources :categories do
